@@ -1,6 +1,8 @@
 set(target_name "adventures_in_c")
 
 set(src_adventures_in_c
+    "src/adventures_in_c/linked_list.c"
+    "src/adventures_in_c/linked_list.h"
     "src/adventures_in_c/adventures_in_c.c")
 
 set(src_files

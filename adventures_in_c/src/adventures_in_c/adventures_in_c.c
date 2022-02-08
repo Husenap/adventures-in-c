@@ -1,21 +1,28 @@
+#include <assert.h>
 #include <stdio.h>
-#include <stdlib.h>
 
-struct node {
-    int value;
-};
-
-typedef struct node node_t;
+#include "linked_list.h"
 
 int main() {
-    printf("Hello C!\n");
+    linked_list_t* list = linked_list_create();
 
-    node_t* n = malloc(sizeof(node_t));
-    n->value  = 42;
+    for (int i = 0; i < 10; ++i) {
+        linked_list_add_first(list, i);
+    }
 
-    printf("n = %d\n", n->value);
+    linked_list_print(list);
 
-    free(n);
+    node_t* five = linked_list_find(list, 5);
+    linked_list_add_after(five, 42);
+
+    linked_list_print(list);
+
+    printf("peek = %d\n", linked_list_peek(list));
+    printf("pop  = %d\n", linked_list_pop(list));
+
+    linked_list_print(list);
+
+    linked_list_destroy(&list);
 
     return 0;
 }
