@@ -1,8 +1,17 @@
-#include <assert.h>
-#include <stdio.h>
+#include <gtest/gtest.h>
 
+extern "C" {
 #include "linked_list.h"
+}
 
+TEST(linked_list, lifetime) {
+    linked_list_t* list = linked_list_create();
+    EXPECT_NE(nullptr, list);
+    linked_list_destroy(&list);
+    EXPECT_EQ(nullptr, list);
+}
+
+/*
 int main() {
     linked_list_t* list = linked_list_create();
 
@@ -26,3 +35,4 @@ int main() {
 
     return 0;
 }
+*/

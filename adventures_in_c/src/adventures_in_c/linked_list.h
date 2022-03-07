@@ -6,7 +6,7 @@ typedef struct node {
     struct node* next;
 } node_t;
 
-typedef struct linked_list {
+typedef struct {
     node_t* head;
 } linked_list_t;
 
@@ -19,4 +19,4 @@ node_t*        linked_list_find(linked_list_t* list, int value);
 int            linked_list_peek(linked_list_t* list);
 int            linked_list_pop(linked_list_t* list);
 
-#endif
+#endif  // _LINKED_LIST_H
