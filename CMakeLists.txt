@@ -14,4 +14,8 @@ set(${PROJECT_NAME}_FOLDER
     ${PROJECT_NAME}
     CACHE STRING "The folder that ${PROJECT_NAME} projects will be placed in.")
 
+enable_testing()
+include(GoogleTest)
+include("thirdparty/googletest.cmake")
+
 add_subdirectory("adventures_in_c")
